@@ -8,7 +8,7 @@ spec:
   clusterIP: None
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.service.port }}
       protocol: TCP
   selector:
     {{- include "sql-statefull-deploy.selectorLabels" . | nindent 4 }}
